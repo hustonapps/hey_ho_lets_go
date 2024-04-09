@@ -28,7 +28,7 @@ func (u *User) ClearUsername() {
 	u.lastName = ""
 }
 
-func NewAdmin(email, password string) Admin {
+func NewAdmin(email, password string) Admin { // returns a copy of Admin
 	return Admin{
 		email: email,
 		password: password,
@@ -41,7 +41,7 @@ func NewAdmin(email, password string) Admin {
 	}
 }
 
-func New(firstName, lastName, birthdate string) (*User, error) {
+func New(firstName, lastName, birthdate string) (*User, error) { // return a pointer to User
 	if firstName == "" || lastName == "" || birthdate == "" {
 		return nil, errors.New("first name, last name, and birthdate are required")
 	}
